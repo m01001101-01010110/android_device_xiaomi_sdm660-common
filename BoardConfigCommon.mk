@@ -35,6 +35,8 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a73
 # Kernel
 BOARD_KERNEL_CMDLINE := \
     androidboot.configfs=true \
+    androidboot.selinux=permissive \
+    androidboot.init_fatal_reboot_target=recovery \
     androidboot.hardware=qcom \
     androidboot.usbcontroller=a800000.dwc3 \
     ehci-hcd.park=3 \
