@@ -1,2 +1,5 @@
 type fingerprint_device, dev_type;
 type spidev_device, dev_type;
+
+# Block devices
+typeattribute system_block_device super_block_device_type;
