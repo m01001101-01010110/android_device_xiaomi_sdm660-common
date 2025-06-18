@@ -30,6 +30,10 @@
 # Mlipay
 /(vendor|system/vendor)/bin/mlipayd@1.1         u:object_r:hal_mlipay_default_exec:s0
 
+# Partitions (A/B)
+/dev/block/platform/soc/1da4000\.ufshc/by-name/system_[ab]                     u:object_r:system_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/by-name/hidden_[ab]                     u:object_r:system_block_device:s0
+
 # Root files
 /persist(/.*)?                                  u:object_r:mnt_vendor_file:s0
 
