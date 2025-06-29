@@ -134,6 +134,9 @@ vendor.gralloc.enable_fb_ubwc=1
 # Dalvik dex2oat
 dalvik.vm.dex2oat64.enabled=true
 
+# fastbootd
+ro.fastbootd.available=true
+
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
