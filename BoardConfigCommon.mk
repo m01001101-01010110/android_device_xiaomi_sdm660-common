@@ -40,6 +40,7 @@ BOARD_KERNEL_CMDLINE := \
     androidboot.init_fatal_reboot_target=recovery \
     androidboot.hardware=qcom \
     androidboot.usbcontroller=a800000.dwc3 \
+    androidboot.veritymode=logging \
     ehci-hcd.park=3 \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
