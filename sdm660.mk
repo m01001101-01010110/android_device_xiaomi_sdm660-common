@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # Disable APEX compression
 # Keep this after including updatable_apex.mk
 PRODUCT_COMPRESSED_APEX := false
