@@ -17,7 +17,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-   <hal format="hidl">
+    <hal format="hidl">
         <name>com.fingerprints.extension</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -50,7 +50,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-      <hal format="hidl">
+    <hal format="hidl">
         <name>vendor.goodix.hardware.fingerprint</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -59,7 +59,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-      <hal format="hidl">
+    <hal format="hidl">
         <name>vendor.xiaomi.hardware.mlipay</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
