@@ -13,7 +13,7 @@
         <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
-            <name>android.hardware.vibrator</name>
+            <name>IVibrator</name>
             <instance>default</instance>
         </interface>
     </hal>
