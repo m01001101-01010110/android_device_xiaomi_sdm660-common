@@ -17,7 +17,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl">
+   <hal format="hidl">
         <name>com.fingerprints.extension</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -25,56 +25,26 @@
             <name>IFingerprintAuthenticator</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    <hal format="hidl">
-        <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IFingerprintCalibration</name>
             <instance>default</instance>
         </interface>
-    </hal>
-      <hal format="hidl">
-        <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IFingerprintEngineering</name>
             <instance>default</instance>
         </interface>
-    </hal>
-      <hal format="hidl">
-        <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IFingerprintNavigation</name>
             <instance>default</instance>
         </interface>
-    </hal>
-      <hal format="hidl">
-        <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IFingerprintRecalibration</name>
             <instance>default</instance>
         </interface>
-    </hal>
-      <hal format="hidl">
-        <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IFingerprintSenseTouch</name>
             <instance>default</instance>
         </interface>
-    </hal>
-      <hal format="hidl">
-        <name>com.fingerprints.extension</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
         <interface>
             <name>IFingerprintSensorTest</name>
             <instance>default</instance>
