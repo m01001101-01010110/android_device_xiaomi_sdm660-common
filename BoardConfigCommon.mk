@@ -60,7 +60,7 @@ TARGET_KERNEL_CONFIG := vendor/xiaomi/sdm660_defconfig vendor/debugfs.config
 TARGET_KERNEL_VERSION := 4.19
 
 # Boot Image Header
-BOARD_BOOTIMG_HEADER_VERSION := 2
+BOARD_BOOTIMG_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 
 # DTB Configuration
