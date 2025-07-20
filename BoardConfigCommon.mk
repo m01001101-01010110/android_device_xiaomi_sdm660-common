@@ -57,7 +57,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
 TARGET_KERNEL_CONFIG := vendor/xiaomi/sdm660_defconfig vendor/debugfs.config
 TARGET_KERNEL_VERSION := 4.19
-BOARD_INCLUDE_DTB_IN_BOOTIMG := false
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 
 # QCOM hardware
