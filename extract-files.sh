@@ -25,8 +25,8 @@ source "${HELPER}"
 CLEAN_VENDOR=true
 
 ONLY_COMMON=
-ONLY_FIRMWARE=
 ONLY_DEVICE_COMMON=
+ONLY_FIRMWARE=
 ONLY_TARGET=
 KANG=
 SECTION=
@@ -72,14 +72,14 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
            "${PATCHELF}" --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
             ;;
-        vendor/bin/pm-service)
-            [ "$2" = "" ] && return 0
-            grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
-            ;;
         vendor/lib64/libmlipay.so | vendor/lib64/libmlipay@1.1.so)
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --remove-needed vendor.xiaomi.hardware.mtdservice@1.0.so "${2}"
             sed -i "s|/system/etc/firmware|/vendor/firmware\x0\x0\x0\x0|g" "${2}"
+            ;;
+        vendor/bin/pm-service)
+            [ "$2" = "" ] && return 0
+            grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
             ;;
         *)
             return 1
