@@ -168,7 +168,7 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 # SELinux
 TARGET_USES_LOGDUMP_AS_METADATA := true
 include device/lineage/sepolicy/libperfmgr/sepolicy.mk
-include device/qcom/sepolicy-legacy-um/SEPolicy.mk
+include device/qcom/sepolicy/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 PRODUCT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 PRODUCT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
