@@ -41,17 +41,18 @@ echo "endif" >> "${PRODUCTMK}"
 # Finish
 write_footers
 
-if [ -s "${MY_DIR}/../../${VENDOR}/$DEVICE_SPECIFIED_COMMON/proprietary-files.txt" ]; then
-    DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
-
+if [ -s "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device specified common
-    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
+    source "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/setup-makefiles.sh"
+    LOCAL_DEVICE_COMMON="${DEVICE_COMMON}"
+    DEVICE_COMMON="${DEVICE_SPECIFIED_COMMON}"
+    setup_vendor "${DEVICE_SPECIFIED_COMMON}" "${VENDOR_SPECIFIED_COMMON:-$VENDOR}" "${ANDROID_ROOT}" true
 
     # Warning headers and guards
     write_headers "${DEVICE_SPECIFIED_COMMON_DEVICE}"
 
     # The standard device specified common blobs
-    write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt"
+    write_makefiles "${MY_DIR}/../../${VENDOR_SPECIFIED_COMMON:-$VENDOR}/${DEVICE_SPECIFIED_COMMON}/proprietary-files.txt"
 
     # Finish
     write_footers
@@ -61,6 +62,7 @@ fi
 
 if [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
     # Reinitialize the helper for device
+    source "${MY_DIR}/../../${VENDOR}/${DEVICE}/setup-makefiles.sh"
     setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}" false
 
     # Warning headers and guards
@@ -68,6 +70,10 @@ if [ -s "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt" ]; then
 
     # The standard device blobs
     write_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-files.txt"
+
+    if [ -f "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt" ]; then
+        append_firmware_calls_to_makefiles "${MY_DIR}/../../${VENDOR}/${DEVICE}/proprietary-firmware.txt"
+    fi
 
     # Finish
     write_footers
