@@ -427,6 +427,10 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl:64 \
     android.hardware.vibrator@1.0-service
 
+# VNDK
+PRODUCT_PACKAGES += \
+    libutils-v33
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
